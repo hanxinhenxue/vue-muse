@@ -1,31 +1,24 @@
 // 这是vuex的mutations层
+
 import axios from 'axios'
+
+import qs from 'qs'
 const mutations = {
     // 点击头像将侧边栏进行显示隐藏的切换
     showSlider:(state,flag)=>{
         state.slider.open = !state.slider.open;
         state.slider.docked = !flag
     },
-    sendMessage(val){
-        let mess = {
-            perception:{
-                inputText:{
-                    text:val
-                }
-            },
-            userInfo:{
-                apiKey: '2d7071f2e88e409f83ce233bf11c7824',
-                userId:123456
-            }
-
-        }
-
-        
-        axios.post('http://openapi.tuling123.com/openapi/api/v2',JSON.stringify(mess)).then(res =>{
-            console.log(res);
-            
+    sendMessage(state,val){
+        val = encodeURIComponent(val)
+        // 'https://bird.ioliu.cn/v1?url=http://www.bing.com/HPImageArchive.aspx?idx=0&format=js&n=1',
+        axios.get('/v2'+val).then(res => {
+            state.robot1.push(res.data.content)//机器人的聊天记录
+            console.log(res.data.content);
+        }).catch(err =>{
+            console.log(err);
+            alert('您的网络出错了哦')
         })
-
     }
 }
 

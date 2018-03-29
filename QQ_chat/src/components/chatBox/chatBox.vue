@@ -1,25 +1,24 @@
 <template>
   <div class="chatBox-containter">
     <!-- 机器人聊天窗口 -->
-    <div class="robot-chat">
+    <div class="robot-chat" v-for="(item,i) in this.$store.state.robot1" :key="i">
       <!-- 头像 -->
       <img src="../../../static/images/robot1.jpg" alt="">
       <!-- 对话 -->
       <div class="words">
-        哈喽今天怎么样啊
+        {{item}}
       </div>
     </div> 
 
     <!-- 玩家聊天窗口 -->
-    <div class="my-chat">
+    <div class="my-chat" v-for="(item,i) in this.$store.state.person" :key="i">
       <!-- 对话 -->
       <div class="words">
-        还不错，你呢？
+        {{item}}
       </div>
       <!-- 头像 -->
       <img src="../../../static/images/head.jpg" alt="">
     </div>
-
 
 
 
@@ -42,9 +41,13 @@
 </script>
 <style lang="less">
 .chatBox-containter {
+  width: 100%;
+  padding-top: 15px;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 75px;
   // 机器人聊天窗口
     .robot-chat{
-    margin-top: 15px;
     display: flex;
     align-items: center;
     img {

@@ -34,6 +34,10 @@
         justify-content: space-between;
         padding: 0 15px;
         align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         // 头像的主容器
         .head-img {
             width: 35px;

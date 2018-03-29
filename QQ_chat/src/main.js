@@ -4,11 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex/store'
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 // 加载muse-ui的组件库
 import MuseUi from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 Vue.use(MuseUi)
-
 // 加载下载的字体图标
 import '../static/font/fonts/iconfont.css'
 import '../static/font/fonts/iconfont.ttf'

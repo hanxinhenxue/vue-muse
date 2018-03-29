@@ -7,9 +7,9 @@
     <!-- 侧边栏 -->
     <slide></slide>
     <!-- 中间内容区域 -->
-    <main>
+
       <router-view></router-view>
-    </main>
+
     <!-- 底部tabBar区域 -->
     <footer v-if="flag">
       <tab-bar></tab-bar>
@@ -61,6 +61,7 @@ import slide from './components/sidebar/sidebar'
     position: relative;
     background-color: #eee;
     padding-bottom: 48px;
+    padding-top: 50px;
     header{
       .mu-appbar-title{
         text-align: center;
