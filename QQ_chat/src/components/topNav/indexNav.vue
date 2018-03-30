@@ -1,11 +1,15 @@
 <template>
     <div class="nav-containter">
         <!-- 左侧的头像 -->
-        <div class="head-img" @click="toggleSlider(true)"><img src="../../../static/images/head.jpg" alt=""></div>
+        <div class="head-img iconfont icon-fanhui" @click="back" v-if="this.$route.path=='/chating'"></div>
+        <div class="head-img" v-else @click="toggleSlider(true)"><img src="../../../static/images/head.jpg" alt=""></div>
             <!-- 头部标题 -->
-            <div class="title">消息</div>
+            <div class="title">{{this.$route.name}}</div>
             <!-- 右侧图标 -->
-            <div id="right-icon" class="iconfont icon-tianjiajiahaowubiankuang"></div>
+            <div id="right-icon" class="iconfont icon-tianjiajiahaowubiankuang" v-if="this.$route.path=='/message'"></div>
+            <div id="right-icon" v-if="this.$route.path=='/linkMan'">添加</div>
+            <div id="right-icon" v-if="this.$route.path=='/state'">更多</div>
+            <div id="right-icon" v-if="this.$route.path=='/chating'" class="iconfont icon-renyuanguanli"></div>
     </div>
 
 </template>
@@ -19,7 +23,11 @@
         },
         methods:{
             toggleSlider(flag){
-                this.$store.commit('showSlider',flag)
+                this.$store.commit('showSlider',flag);
+            },
+            back(){
+                this.$router.go(-1)
+                
             }
         }
     }
@@ -55,7 +63,7 @@
         }
         //右侧的
         #right-icon{
-            font-size: 24px;
+            font-size: 18px;
         }
     }
 </style>

@@ -13,8 +13,7 @@ const mutations = {
         val = encodeURIComponent(val)
         // 'https://bird.ioliu.cn/v1?url=http://www.bing.com/HPImageArchive.aspx?idx=0&format=js&n=1',
         axios.get('/v2'+val).then(res => {
-            state.robot1.push(res.data.content)//机器人的聊天记录
-            console.log(res.data.content);
+            state.chat.push({_id:'aa',content:res.data.content})//机器人的聊天记录
         }).catch(err =>{
             console.log(err);
             alert('您的网络出错了哦')

@@ -12,23 +12,15 @@ Vue.use(Vuex)
 
 // 将其他页面所需的变量定义
 let state = {
-    // 定义每个页面顶部的名字
-    titleName:{
-        index:'消息',
-        linkMan:'联系人',
-        status:'动态'
-    },
     // 侧边栏的状态栏改变
     slider:{
         open: false,
         docked: true
     },
     // 聊天窗口机器人的对话列表
-    robot1:[
-        "我们是好朋友了，一起聊天吧！"
+    chat:[
+        {_id:'aa',content:'我们已经是好友了，开始聊天吧'}
     ],
-    person:[
-    ]
 }
 
 // 导出store对象

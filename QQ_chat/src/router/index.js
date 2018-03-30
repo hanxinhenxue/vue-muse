@@ -17,19 +17,19 @@ import chating from '../components/chatBox/chatBox.vue'
 export default new Router({
   routes: [
     {
-      path:'/message',name:'message',component:message
+      path:'/message',name:'消息',component:message
     },
     {
-      path:'/linkMan',name:'linkMan',component:linkMan
+      path:'/linkMan',name:'联系人',component:linkMan
     },
     {
-      path:'/state',name:'state',component:state
+      path:'/state',name:'动态',component:state
     },
     {
-      path:'/',component:message
+      path:'/',component:message,name:'消息'
     },
     {
-      path:'/chating',name:'chating',component:chating
+      path:'/chating',name:'蕾姆',component:chating
     }
   ]
 })
